@@ -1,5 +1,4 @@
-# teste-pratico-Iniflex
-Teste Prático - Iniflex - Exercicio gupy
+# teste-pratico-Iniflex Projedata gupy
 
 TESTE PRÁTICO PROGRAMAÇÃO.
 
