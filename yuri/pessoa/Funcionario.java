@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
 import java.time.LocalDate;
+import java.time.Period;
 
 public class Funcionario extends Pessoa {
 	private static final DecimalFormat FORMATADOR_SALARIO = new DecimalFormat("#,##0.00");
@@ -47,7 +48,12 @@ public class Funcionario extends Pessoa {
 				" }";
 	}
 
-	public BigDecimal calcularNumeroSalarioMinimo(){
+	public BigDecimal calcularNumeroSalarioMinimo() {
 		return this.salario.divide(SALARIO_MINIMO, RoundingMode.HALF_UP);
+	}
+
+	public int calcularIdade() {
+		LocalDate hoje = LocalDate.now();
+		return Period.between(dataNascimento, hoje).getYears();
 	}
 }

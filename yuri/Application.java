@@ -48,16 +48,16 @@ public class Application {
 		printarMap(agrupadosPorFuncao);
 
 //		3.8 – Imprimir os funcionários que fazem aniversário no mês 10 e 12.
-		List<Funcionario> aniversario10ou12 = LISTA.stream().filter(funcionario -> {
+		List<Funcionario> aniversariantesMes10ou12 = LISTA.stream().filter(funcionario -> {
 			int mes = funcionario.getDataNascimento().getMonthValue();
 			return mes == 10 || mes == 12;
 		}).toList();
 		System.out.println("Aniversariantes mes 10 e 12:");
-		printarLista(aniversario10ou12);
+		printarLista(aniversariantesMes10ou12);
 
 //		3.9 – Imprimir o funcionário com a maior idade, exibir os atributos: nome e idade.
 		Funcionario maisVelho = LISTA.stream().min(Comparator.comparing(Funcionario::getDataNascimento)).get();
-		System.out.println("Funcionario mais velho: " + maisVelho);
+		System.out.printf("O %s é o funionário mais velho com %d anos de idade.%n", maisVelho.getNome(), maisVelho.calcularIdade());
 
 //		3.10 – Imprimir a lista de funcionários por ordem alfabética.
 		List<Funcionario> ordemAlfabetica = new ArrayList<>(LISTA);
